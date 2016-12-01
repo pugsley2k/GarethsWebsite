@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+</head>
+<body>
+  
+  <meta charset="utf-8">
+  <meta content="ie=edge" http-equiv="x-ua-compatible">
+  <meta content="" name="description">
+  <meta content="width=device-width, initial-scale=1" name="viewport">
+  <link href="apple-touch-icon.png" rel="apple-touch-icon"><!-- Place favicon.ico in the root directory -->
+  <link href="css/blognormalize.css" rel="stylesheet">
+  <link href="css/blogmain.css" rel="stylesheet">
+  <script src="js/vendor/modernizr-2.8.3.min.js">
+  </script>
+  <link href="https://fonts.googleapis.com/css?family=Lobster|Poiret+One" rel="stylesheet">
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js">
+  </script>
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <script>
+  document.body.className += ' fade-out';
+  </script> <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+   <!-- Add your site or application content here -->
+  <div id="titleHeader">
+    <a href="index.html">
+    <h3 id="back"><i aria-hidden="true" class="fa fa-arrow-left"></i> Back to main website</h3></a>
+    <div class="container">
+      <h1 id="title">blog. | website development</h1><i aria-hidden="true" class="fa fa-toggle-off" id="icon"></i> <span style="color: white; font-size: 15px;">Click Me</span>
+    </div>
+  </div>
+  <div class="sections">
+    <div class="col-md-1"></div>
+    <div class="col-md-10">
+      <div class="row">
+        <div class="col-md-4">
+          <h1 id="js">JS/jQuery</h1>
+          <h2 id="settime"> .setTimeOut() </h2>
+          setTimeout(function(){ $("#settime").css("background-color", "red");},3000);
+          Here we just pass in the setTimeOut function and end it with a duration. 3000 = 3 seconds.
+          In this example the text goes red after 3 seconds. This has helped me exponentially throughtout my work and was a wonderful discovery!
+          <h2 id="animate">.animate();</h2>
+          <div class="moveme"></div><br>
+          $("#animate").click(function(){ $(".moveme").animate({left: '250px'});<br>
+          The left meaning 250 px on the left margin, so the object moves right.
+          <h2 id="h2on">.on();</h2>
+          <p id="on"><b>This text should change colour when it is clicked.</b></p>The on method works for various different methods for example in this one I used a .on("click") to change the font color on click.<br>
+          I think on works for items which arnt actually visible yet or something like that. $("#on").on("click" ,function(){ &lt;--------- First use the method.on and within the brackets state what method you intend to use and function(){}<br>
+          <br>
+          $("#on").css("color", "red");<br>
+          });
+          <h2 id="h2ml">.mouseleave();</h2>
+          <p id="ml"><b>This text should change colour when the move leaves it.</b></p>$("#h2ml").mouseleave(function(){ &lt;-------<br>
+          $("#h2ml").css("color", "red"); &lt;--------<br>
+          });
+          <h2 id="h2mo">.mouseover();</h2>
+          <p id="mo"><b>This text should turn...red. ye red.</b></p>$("#mo").mouseover(function(){ &lt;------- Declare .mouseover function on selector<br>
+          $("#mo").css("color", "red"); &lt;------- Use CSS on selector to change color to red.<br>
+          });
+          <h2>.append();</h2><br>
+          $("input[type=text]").keypress(function(event){ &lt;------ When You are in the input box and press a certain button this event will fire!<br>
+          if (event.which === 13){ &lt;------ If the button is enter (13) then...<br>
+          var t = $(this).val(); &lt;------ set the answer as a variable<br>
+          $(this).val(""); &lt;------ clear the answer<br>
+          $("ul").append("&lt;"li"&gt;" + t + "&lt;/"li"&gt;") &lt;------ Put var "t" into a new li using the parent append function<br>
+          } });<br>
+          <br>
+          <input id="textbox" type="text"><br>
+          <br>
+          <ul>
+            <li>Home</li>
+            <li>About</li>
+            <li>Contact</li>
+          </ul>
+        </div><!-- col close -->
+        <div class="col-md-4 column">
+          <h1 class="anchor">CSS</h1>
+          <h2>Overflow</h2>
+          <p>If ever you need to hide things off screen so you don't get random scroll bars just apply <b>overflow: hidden;</b> to the parent element of whatever is causing the problem.</p>
+          <h2 id="html">:first-letter</h2>
+          <p id="fl">The first letter of this sentence should look like a storybook thinger ma jig</p>Using the :first-letter method we can select any first letter of any sentence and use css to style it. Kinda cool.
+          <h1 id="links">Links</h1>
+          <h2>Font Awesome</h2>
+          <p><a href="fontawesome.io"><b>Font Awesome</b></a> Is a great resource for Icons!</p>
+          <h2>Animate CSS</h2>
+          <p><a href="https://daneden.github.io/animate.css/"><b>Animate CSS</b></a> is perfect for transitions like bounceIn etc</p>
+        </div><!-- col close -->
+        <div class="col-md-4 column">
+          <h1>HTML</h1>
+          <h2>Jump To Section</h2>To go to sections on a page, use (A href = #something") We clicked here! (/A) and set the section you want to go to as (A name ="something") We jumped here! (/A) Good Luck me...<br>
+          <h2>Get Directions (Google Maps)</h2><br>
+          <form action="http://maps.google.com/maps" method="get" target="_blank">
+            <label for="saddr">Enter your location</label><br>
+            <input name="saddr" type="text"> <input name="daddr" type="hidden" value="350 5th Ave New York, NY 10018 (Empire State Building)"> <input type="submit" value="Get directions">
+          </form><br>
+          <p>I don't know how this works but its handy.</p>&lt;form action="http://maps.google.com/maps" method="get" target="_blank"&gt;<br>
+          &lt;label for="saddr"&gt;Enter your location &lt;/label&gt; &lt;<br>
+          &lt;input type="text" name="saddr" /&gt;<br>
+          &lt;input type="hidden" name="daddr" value="350 5th Ave New York, NY 10018 (Empire State Building)" /&gt;<br>
+          &lt;input type="submit" value="Get directions" /&gt;<br>
+          &lt;/form&gt;
+          <h2>Comment Markup</h2>This was going to be a side note but took forever to figure out.<br>
+          To put markup as a comment select the paragraphg and Find &gt; Replace &gt; In Selection and replace "&lt;" with "(andsign)lt;"<br>
+          <br>
+          &lt;input type="submit" THIS ISNT MARKUP ITS A COMMENT value="Get directions" /&gt;
+        </div><!-- col close -->
+      </div><!-- row class close -->
+    </div><!-- container class close -->
+    <div class="col-md-1"></div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="post1">
+        <h2>Update 19/11/2016</h2>
+        <p>I think that these last couple of weeks have really shown an improvement in me, I can now read and write jQuery which saves sooooo much time I am also 20% complete on my personal website and plan to add more features as time progresses, I have been using the Web Development Facebook group for certain issues like phone compatibility and the response time there is fairly amazing. I have enjoyed discovering different methods but am aware that I am only just getting started with what js and jq are capable. Hopefully with time I will progress as well asthe creations I make. For now i'm just happy I can move things on a page. I have used quite a lot of plugins and libraries to make it so far but it feels sort of like cheating. Even though I dont know fully how I would write out some of the code ive used I do understand how it works....and that's basically the same thing right?...Anyway for the next step I intend to possibly familiarise myself with AJAX which I believe is a must if im going to have back and forths between servers. For now the site looks pretty and semi-functioning and as a trainee web developer I cant really ask for more. In my next post hopefully I will be talking about. Some new code or some new experiences. <br>
+        Codeword of the day: The <b>.on()</b> method is basically all methods in one, simply insert .on() where you would normally put .click or whatever. Then in the () simply add the method like so .on("click", function(){}). Cool huh.
+        </p>
+        <h2>Hello Blog 15/11/2016</h2><br>
+        <p>This will be my blog, this will be where I post things that interest me and are relevant to web development. difficult. Hense the blog. So my plan is to create a website for myself using HTML/CSS/JS. I suck at JavaScript as it is, so I need something that will utilise it properly. Next step is to look at methods and events on tinterweb and find something I can use. Also if I create the basic skeleton of a website I can use that I can actually visualise what I intend to do. I realise there are hundreds of lists describing the methods used but I figure if I write my own index it will stick in my head a little better. Wish me luck!<br>
+        <br>
+        Method of the day: The <b>.append()</b> method inserts the specified content as the last child of each element in the jQuery collection (To insert it as the first child, use .prepend()).<br>
+        <br></p>
+      </div>
+    </div>
+  </div>
+  <script src="https://code.jquery.com/jquery-1.12.0.min.js">
+  </script> 
+  <script>
+  window.jQuery || document.write('<script src="js/vendor/jquery-1.12.0.min.js"><\/script>')
+  </script> 
+  <script src="js/plugins.js">
+  </script> 
+  <script src="js/blogmain.js">
+  </script> <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+   
+  <script>
+             (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+             function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+             e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+             e.src='https://www.google-analytics.com/analytics.js';
+             r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+             ga('create','UA-XXXXX-X','auto');ga('send','pageview');
+  </script>
+</body>
+</html>
